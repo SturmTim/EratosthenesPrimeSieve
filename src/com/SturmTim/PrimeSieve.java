@@ -10,5 +10,7 @@ package com.SturmTim;
  * @author tsturm18
  */
 interface PrimeSieve {
-    
+    public boolean isPrime ( int p ) ;
+
+    public void printPrimes ( ) ;
 }

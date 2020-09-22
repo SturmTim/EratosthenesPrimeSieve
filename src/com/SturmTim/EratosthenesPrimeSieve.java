@@ -5,17 +5,48 @@
  */
 package com.SturmTim;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  *
  * @author tsturm18
  */
-public class EratosthenesPrimeSieve {
+public class EratosthenesPrimeSieve implements PrimeSieve{
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+    }
+
+    @Override
+    public boolean isPrime(int p) {
+        return true;
+    }
+
+    @Override
+    public void printPrimes() {
+        
+        
+    }
+    
+    public void getPrimeArray(){
+        Scanner scanner =new Scanner(System.in, "Windows-1252");
+        System.out.println("Bis zu welcher Obergrenze wollen Sie die Primzahlen wissen?");
+        int og = Integer.parseInt(scanner.nextLine());
+        
+        List<Integer> isprime = new ArrayList<>();
+        List<Integer> notprime = new ArrayList<>();
+        
+        for (int i = 2; i <= og; i++) {
+            if(notprime.contains(i)){
+            }
+            else{
+                isprime.add(i);
+            }
+            
+        }
     }
     
 }
