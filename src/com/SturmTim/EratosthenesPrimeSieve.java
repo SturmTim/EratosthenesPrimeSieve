@@ -23,6 +23,8 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     public static void main(String[] args) {
         EratosthenesPrimeSieve eps = new EratosthenesPrimeSieve();
         eps.printPrimes();
+        System.out.println("");
+        eps.goldbachsche();
     }
 
     @Override
@@ -35,7 +37,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         Scanner scanner = new Scanner(System.in, "Windows-1252");
         System.out.println("Bis zu welcher Obergrenze wollen Sie die Primzahlen wissen?");
         og = Integer.parseInt(scanner.nextLine());
-
+        notprime.add(1);
         for (int i = 2; i <= og; i++) {
             if (isPrime(i) == false) {
                 notprime.add(i);
@@ -63,8 +65,12 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
             ng.add(i);
         }
         for (Integer n : ng) {
-            for (int i = 0; isprime.get(i) < n; i++) {
-                
+            for (int i = 0; i < isprime.size() && isprime.get(i) < n; i++) {
+                if (isPrime(n - isprime.get(i)) == true) {
+                    System.out.println(n + " = " + isprime.get(i) + " + " + (n - isprime.get(i)));
+                    break;
+                }
+
             }
         }
     }
